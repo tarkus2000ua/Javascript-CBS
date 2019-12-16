@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ukraine</title>
+  </head>
+  <body>
+    <script>
+              let Ukraine = {};
+              Ukraine.president='<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Volodymyr_Zelensky_Official_portrait.jpg/278px-Volodymyr_Zelensky_Official_portrait.jpg">';
+              Ukraine.flag = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/125px-Flag_of_Ukraine.svg.png">';
+              Ukraine.capital = "Kyiv";
+              Ukraine.population = 41960033;
+              Ukraine.visaFree = ["Azerbaijan (up to 90 days)","<br>Albania (up to 90 days)","<br>Antigua and Barbuda from 29 June 2018 of the year (up to 90 days for 180 days)","<br>Argentina (up to 90 days)","<br>Armenia","<br>Belarus","<br>Bosnia and Herzegovina (up to 30 days). You may need tickets back, host invitation or travel voucher.","<br>Brazil (up to 90 days). May need return tickets","<br>Brunei (up to 30 days). Be sure to have tickets in both directions.","<br>Vanuatu (up to 30 days). Citizens of Ukraine entering Vanuatu for a period not exceeding 30 days do not need a visa, a visa stamp is placed directly at the border crossing point. You should have your tickets back, hotel reservations, a document confirming your solvency","<br>Guatemala (up to 90 days). Return tickets are required.","<br>Hong Kong (up to 14 days). Return tickets will be required","<br>Grenada (up to 90 days). Available only with travel vouchers.","<br>Georgia (up to 365 days)","<br>Western Sahara","<br>Israel (up to 90 days)","<br>Indonesia (up to 30 days). You need a passport, valid for at least 6 more months from the date of arrival in the republic, as well as return tickets or tickets to another country.","<br>Kazakhstan (up to 90 days)","<br>Qatar (for a period not exceeding 90 days, for 180 days)","<br>Kyrgyzstan (up to 90 days)","<br>Costa Rica (up to 90 days). Since December 2016, a visa-free regime has been introduced for citizens of Ukraine. A requirement for entry into the country is the presence of a passport document, which must be valid for at least 90 days at the time of the intended departure from Costa Rica. When leaving the state, a US $ 29 fee must be paid, regardless of the type of traveler’s passport document.","<br>Malaysia (up to 30 days). Have return tickets with you","<br>Macedonia (up to 90 days). You will need an insurance policy","<br>Micronesia (only for tourists with vouchers)","<br>Молдова","<br>Mongolia (up to 90 days). Invitation to host is required","<br>Namibia (up to 90 days). Need a migration card filled out in English","<br>Niue (up to 30 days). Looking for return tickets","<br>Nicaragua","<br>United Arab Emirates (31.12.2017 entered into force Memorandum on the mutual abolition of visas.","<br>Visa-free visits to the UAE are available only to citizens with biometric passports that are valid for at least 6 months. Stay without a visa on the territory of the United Arab Emirates possibly up to 30 days","<br>Ck (up to 31 of the day)","<br>Panama (up to 90 days)","<br>Paraguay (up to 90 days). Required return tickets","<br>Peru (up to 90 days). Up to 183 days, subject to availability of documents confirming the tourist purpose of the trip","<br>Pitcairn (on 14 days). In case of arrival and departure on the same vessel","<br>Russia (up to 90 days). Also allowed to enter the territory of Russia on the ID-card","<br>Samoa (up to 60 days)","<br>Swaziland (up to 30 days)","<br>Seychelles (up to 30 days). Return tickets and travel voucher required","<br>Serbia (up to 90 days)","<br>Saint kitts и Nevis (up to 90 days). Since June 24, the Ukrainian government has adopted a draft agreement on the mutual abolition of the visa regime with Saint Kitts and Nevis","<br>Tajikistan (up to 90 days)","<br>Tunisia (up to 30 days). You should have a travel voucher with you.","<br>Turkey (up to 90 days within 180 days from the date of entry). On request, you may need tickets back and a tourist voucher. Ukrainians can visit Turkey by ID-card","<br>Uzbekistan","<br>Montenegro (up to 90 days)","<br>Chile (up to 90 days)","<br>Spitsbergen","<br>Ecuador (up to 90 days)","<br>Jamaica (up to 30 days). You will need return tickets and proof of solvency.","<br>Yan-Maen (visa-free, but you need to drive through the territory of Norway, visa for Ukrainians).<br>"];
+              Ukraine.stateLanguages = ['Ukrainian'];
+              Ukraine.neighbours = ["Poland","Slovakia","Hungary","Romania","Moldova","Russia","Belarus"];
+              Ukraine.regions = {
+                "Autonomous Republic of Crimea": "Simferopol",
+                "Cherkasy Region": "Cherkasy",
+                "Chernihiv Region": "Chernihiv",
+                "Chernivtsi Region": "Chernivtsi",
+                "Dnipropetrovs'k Region": "Dnipro",
+                "Donets'k Region": "Donets'k",
+                "Ivano-Frankivs’k Region": "Ivano-Frankivs’k",
+                "Kharkiv Region": "Kharkiv",
+                "Kherson Region": "Kherson",
+                "Khmelnytsky Region": "Khmelnytsky",
+                "Kirovograd Region": "Kirovograd",
+                "Kyiv Region": "Kyiv",
+                "Luhans'k Region": "Luhans'k",
+                "Lviv Region": "Lviv",
+                "Mykolayiv Region": "Mykolayiv",
+                "Odesa Region": "Odesa",
+                "Poltava Region": "Poltava",
+                "Rivne Region": "Rivne",
+                "Sumy Region": "Sumy",
+                "Ternopil Region": "Ternopil",
+                "Vinnytsya Region": "Vinnytsya",
+                "Volyn region": "Lutsk",
+                "Zakarpattya Region": "Uzhhorod",
+                "Zaporizhzhya Region": "Zaporizhzhya",
+                "Zhytomyr Region": "Zhytomyr",
+              }
+              Ukraine.getNeighbours = function(){
+                document.write("<b>Neighbours of Ukraine: </b>" +this.neighbours+"<br><hr>");
+              }
+              Ukraine.getRegionCapitals = function(){
+                document.write("<b>Capitals of regions of Ukraine: </b><br><hr>");
+                let regions = Object.keys(this.regions);
+                for (let item of regions) {
+                      document.write("<b>"+item+"</b>" +": "+this.regions[item]+"<br>");
+                  }
+              }
+              Ukraine.getAll = function() {
+                  for (let item in this) {
+                      if (typeof(this[item]) !== "function" && typeof(this[item]) !== "object" || Array.isArray(Ukraine[item])){
+                      document.write("<b>"+item+"</b>" +": "+this[item]+"<br><hr>");
+                      }
+                  }
+                  this.getRegionCapitals();
+              }
+
+              document.write("<b><big>Ukraine</big></b><br><hr>");
+              Ukraine.getAll();
+              
+              document.write("<hr><b>Ukraine getNeighbours method</b><br><hr>");
+              Ukraine.getNeighbours();
+    </script>
+  </body>
+</html>

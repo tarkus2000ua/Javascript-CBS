@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise6</title>
+	<script type="text/javascript">
+
+	//==================================================================================
+    // 6. Напишите функцию поиска самого большого числа во вложенном массиве внутри массива
+    // Отобразите результат с помощью document.write
+
+    var arr = [[12, 7, 8, 62], [92, 27, 36, 17], [42, 14, 52, 2], [1000, 300, 857, 1], [3000, 16, 998, 123]];
+
+	function searchMax(a){
+		let max=a[0];
+		for (let i=1; i<a.length;i++) {
+			if (a[i]>max) max=a[i];
+		}
+		return max;
+	}
+
+	document.write(arr.map(searchMax));
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

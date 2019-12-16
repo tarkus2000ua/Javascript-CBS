@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 1</title>
+  </head>
+  <body>
+    <script>
+      function Add(x, y) {
+        document.write(x + "+" + y + "=" + (x + y));
+      }
+      function Sub(x, y) {
+        document.write(x + "-" + y + "=" + x - y);
+      }
+      function Mul(x, y) {
+        document.write(x + "*" + y + "=" + x * y);
+      }
+      function Div(x, y) {
+        if (y != 0) document.write(x + "/" + y + "=" + x / y);
+        else document.write("Делитель не должен быть равным нулю");
+      }
+
+      let x = +prompt("Введите аргумент x");
+      let y = +prompt("Введите аргумент y");
+      let operation = prompt("Введите тип операции +-*/");
+
+      switch (operation) {
+        case "+":
+          Add(x, y);
+          break;
+        case "-":
+          Sub(x, y);
+          break;
+        case "*":
+          Mul(x, y);
+          break;
+        case "/":
+          Div(x, y);
+          break;
+        default:
+          document.write("Введен некорректный тип операции");
+          break;
+      }
+    </script>
+  </body>
+</html>

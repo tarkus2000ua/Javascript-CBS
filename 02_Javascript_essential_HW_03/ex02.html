@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise №2</title>
+  </head>
+  <body>
+    <script>
+      let n = +prompt("Введите количество элементов N");
+      let a = Array(n);
+      for (let i = 0; i < a.length; i++) {
+        a[i] = Math.floor(Math.random() * 100) - 50;
+      }
+      document.write("Массив из " + n + " элементов:<br>" + a + "<br><br>");
+
+      let min = Number.POSITIVE_INFINITY;
+      let max = Number.NEGATIVE_INFINITY;
+      let sum = 0;
+      let avg = 0;
+      let oddNumbers = [];
+
+      for (let i = 0; i < a.length; i++) {
+        if (a[i] > max) max = a[i];
+        if (a[i] < min) min = a[i];
+        if (a[i] % 2 != 0) oddNumbers.push(a[i]);
+        sum += a[i];
+      }
+      avg = sum / n;
+
+      document.write("Наибольшее значение: " + max + "<br>");
+      document.write("Наименьшее значение: " + min + "<br>");
+      document.write("Среднее значение: " + avg + "<br>");
+      document.write("Сумма: " + sum + "<br>");
+      document.write("Нечетные значения:<br>" + oddNumbers + "<br><br>");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise №3</title>
+  </head>
+  <body>
+    <script>
+      let n = parseInt(prompt("Введите целое число N", "0"));
+
+      let factorial = 1;
+      let i = 1;
+
+      do {
+        factorial *= i;
+        i++;
+      } while (i <= n);
+
+      document.write("Факториал числа " + n + " равен " + factorial);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise №4</title>
+  </head>
+  <body>
+    <script>
+      document.write("Прямоугольник<br><br>");
+
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 20; j++) {
+          document.write("*&nbsp;");
+        }
+
+        document.write("<br>");
+      }
+
+      document.write("<br>");
+      document.write("Прямоугольный треугольник<br><br>");
+      let row = "";
+      for (let i = 0; i < 15; i++) {
+        row += "*&nbsp;";
+        document.write(row + "<br>");
+      }
+
+      document.write("<br>");
+      document.write('"Равносторонний" треугольник<br><br>');
+      let length = 15;
+      let centerPoint = Math.round(length / 2);
+      for (let i = 0; i < length; i++) {
+        for (let j = length; j > 0; j--) {
+          if (Math.abs(j - centerPoint) <= centerPoint - i - 1) {
+            document.write("*");
+          } else {
+            document.write("&nbsp;&nbsp;");
+          }
+        }
+        document.write("<br>");
+        // document.write(row+"<br>");
+      }
+    </script>
+  </body>
+</html>

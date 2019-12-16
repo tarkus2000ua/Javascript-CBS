@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 4</title>
+    <script>
+      //4. Напишите программу которая сравнивает две строки и определяет являются ли они анаграммой.
+
+      //    Результат
+
+      //Введите два слова и я скажу являются ли они анаграммой:
+      //Введите первое слово: апельсин
+      //Введите второе слово: спаниель
+      //Слова "апельсин" и "спаниель" являются анаграммой.
+
+      //    Условия
+
+      //Определите функцию isAnagram, которая принимает две строки в качестве аргументов и возвращает true или false.
+      //Вызовите эту функцию из главной программы..
+      let myString1 = prompt("Введите первое слово");
+      let myString2 = prompt("Введите второе слово");
+
+      function isAnagram(string1, string2) {
+        if (string1.split("").sort().join("") == string2.split("").sort().join("")) {
+          return true;
+        } else {
+          return false;  
+        }
+      }
+
+      if (isAnagram(myString1,myString2)) {
+        document.write("Слова " + myString1 + " и " + myString2 + " являются анаграммой.");
+      }
+      else {
+        document.write("Слова " + myString1 + " и " + myString2 + " не являются анаграммой.");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

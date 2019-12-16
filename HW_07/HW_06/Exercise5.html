@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Exercise 5</title>
+    <script>
+
+        //5. У массивов есть метод reverse, меняющий порядок элементов в массиве на обратный.
+        //В качестве упражнения напишите функцию reverseArray.Которая получает массив как
+        //аргумент и выдаёт новый массив – с обратным порядком элементов.
+        let arr = [1,2,3,4,5];
+
+        function reverseArray(a){
+            let newArray = [];
+            for (let item of a) {
+                newArray.unshift(item);
+            }
+            return newArray;
+        }
+
+        document.write("Исходный массив: "+arr+"<br>");
+        document.write("Преобразованный массив: "+reverseArray(arr)+"<br>");
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

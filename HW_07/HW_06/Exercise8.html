@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise8</title>
+    <script>
+      /*     
+            Создайте собственную реализацию функции filter(). Используя функцию обратного вызова.
+            filter([1, 2, 3, 4], callback); callback: n => n < 3 // [1, 2]
+        */
+      let myArray = [1, 2, 3, 4, 5, 6, 7];
+      let f = n => n >= 2 && n < 6;
+
+      function myFilter(arr, criteria) {
+        let newArray = [];
+        for (let item of arr) {
+          if (criteria(item)) {
+            newArray.push(item);
+          }
+        }
+        return newArray;
+      }
+
+      document.write(myFilter(myArray, f));
+    </script>
+  </head>
+  <body></body>
+</html>

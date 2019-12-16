@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 2</title>
+  </head>
+  <body>
+    <script>
+      let x = +prompt("Введите аргумент x");
+      let numsToCheck = [2, 3, 5, 6, 9];
+      numberInfo(x);
+
+      function numberInfo(x) {
+        document.write("Число " + x + ":<br><hr>");
+        if (x == 0) {
+          document.write("Число равно нулю<br>");
+          return;
+        } else {
+          checkSign(x);
+          checkPrime(x);
+          checkDivision(x, numsToCheck);
+        }
+      }
+
+      function checkSign(x) {
+        if (x > 0) {
+          document.write("Число положительное<br>");
+        } else if (x < 0) {
+          document.write("Число отрицательное<br>");
+        } 
+      }
+
+      function checkPrime(x) {
+        for (let 2; index < x; index++) {
+          if (x % index == 0) {
+            document.write("Число не является простым<br>");
+            return;
+          }
+        }
+        document.write("Число простое<br>");
+      }
+
+      function checkDivision(x, y) {
+        for (let index = 0; index < y.length; index++) {
+          if (x % y[index] == 0) {
+            document.write("Число делится без остатка на " + y[index] + "<br>");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

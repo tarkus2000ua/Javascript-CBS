@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Chess Board</title>
+    <style>
+      table {
+        width: 600px;
+        height: 600px;
+        border-collapse: collapse;
+        outline: 2px solid black;
+      }
+
+      td {
+        width: 12.5%;
+      }
+      .black {
+        background-image: url("img/dark.jpg");
+      }
+      .white {
+        background-image: url("img/light.jpg");
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      document.write("<table>");
+      for (let i = 0; i < 8; i++) {
+        document.write("<tr>");
+        for (let j = 0; j < 8; j++) {
+          if (j % 2 != 0) {
+            if (i % 2 == 0) {
+              document.write('<td class="black">');
+            } else {
+              document.write('<td class="white">');
+            }
+          } else {
+            if (i % 2 == 0) {
+              document.write('<td class="white">');
+            } else {
+              document.write('<td class="black">');
+            }
+          }
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

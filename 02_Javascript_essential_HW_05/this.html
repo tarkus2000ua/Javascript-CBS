@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This</title>
+</head>
+<body>
+    <script>
+        let myObject = {};
+        myObject.innerObject = {};
+        myObject.arrowMethod = () => {
+            console.log("MyObject's arrow method");
+            console.log(this);
+        };
+        myObject.innerObject.arrowMethod = () => {
+            console.log("InnerObject's arrow method");
+            console.log(this);
+        };
+        // Возвращает объект MyObject
+        myObject.fMethod = function() {
+            console.log("MyObject's function method");
+            console.log(this);
+        };
+        myObject.innerObject.fMethod = function() {
+            console.log("InnerObject's function method");
+            console.log(this);
+        };
+
+        myObject.caller = function() {
+            console.log("Call InnerObject's function method from myObjects method");
+            this.innerObject.fMethod();
+        }
+
+        // Возвращает объект Window (this: typeof globalThis)
+        myObject.arrowMethod();
+        
+        // Возвращает объект MyObject (this: typeof myObject)
+        myObject.fMethod();
+
+        // Возвращает объект Window (this: typeof globalThis)
+        myObject.innerObject.arrowMethod();
+
+        // Возвращает объект innerObject (this: typeof myObject.innerObject)
+        myObject.innerObject.fMethod();
+
+        myObject.caller();
+    </script>
+</body>
+</html>

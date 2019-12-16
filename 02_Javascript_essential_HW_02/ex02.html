@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise №2</title>
+</head>
+<body>
+    <script>
+        let a=parseInt(prompt("Введите нижнюю границу диапазона (А)","0"));
+        let b=parseInt(prompt("Введите верхнюю границу диапазона (B)","0"));
+
+        let sum=0;
+
+        document.write("Нечетные числа: ");
+
+        for (let index = a+1; index < b; index++) {
+            sum += index;
+            if (index%2 != 0) {
+                document.write(index + "&nbsp;")
+            }
+        }
+
+        document.write("<br>Сумма целых чисел в диапазоне от "+a+" до "+b+" равна "+sum);
+    </script>
+</body>
+</html>

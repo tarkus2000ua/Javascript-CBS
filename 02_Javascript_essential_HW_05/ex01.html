@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 1</title>
+    <style>
+      #header {
+        height: 200px;
+        background: orange;
+      }
+      #body {
+        height: 400px;
+        background: lightskyblue;
+      }
+      #footer {
+        height: 200px;
+        background: greenyellow;
+      }
+      #data {
+        height: 300px;
+        width: 70%;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let doc = {
+        header: "",
+        body: "",
+        footer: "",
+        data: "",
+        app: {
+          header: {
+            text: "",
+            bgcolor: ""
+          },
+          body: {
+            text: "",
+            bgcolor: ""
+          },
+          footer: {
+            text: "",
+            bgcolor: ""
+          },
+          data: {
+            text: "apptext",
+            bgcolor: ""
+          },
+          /*
+                Важно!!!  Если объявлять методы не через function, а через =>, то this не будет ссылаться на текущий объект
+
+          */
+          writeToAppHeader: function(text, bgcolor) {
+            this.header.text = text;
+            this.header.bgcolor = bgcolor;
+          },
+          writeToAppFooter: function(text, bgcolor) {
+            this.footer.text = text;
+            this.footer.bgcolor = bgcolor;
+          },
+          writeToAppBody: function(text, bgcolor) {
+            this.body.text = text;
+            this.body.bgcolor = bgcolor;
+          },
+          writeAppData: function(text, bgcolor) {
+            this.data.text = text;
+            this.data.bgcolor = bgcolor;
+          },
+          getAppHeader: function() {
+            let content =
+              '<div style="background:' +
+              this.header.bgcolor +
+              ';">' +
+              this.header.text +
+              "</div>";
+            return content;
+          },
+          getAppFooter: function() {
+            let content =
+              '<div style="background:' +
+              this.footer.bgcolor +
+              ';">' +
+              this.footer.text +
+              "</div>";
+            return content;
+          },
+          getAppBody: function() {
+            let content =
+              '<div style="background:' +
+              this.body.bgcolor +
+              ';">' +
+              this.body.text +
+              "<br><br>" +
+              this.getAppData() +
+              "</div>";
+            return content;
+          },
+          getAppData: function() {
+            let content =
+              '<div style="background:' +
+              this.data.bgcolor +
+              '; width:50%; margin:10px auto;">' +
+              this.data.text +
+              "</div>";
+            return content;
+          },
+          printApp: function() {
+            let appFullCode = "";
+            appFullCode += this.getAppHeader();
+            appFullCode += this.getAppBody();
+            appFullCode += this.getAppFooter();
+            return appFullCode;
+          }
+        },
+        writeToHeader: function(text) {
+          this.header = text;
+        },
+        writeToFooter: function(text) {
+          this.footer = text;
+        },
+        writeToBody: function(text) {
+          this.body = text;
+        },
+        writeData: function(text) {
+          this.data = text;
+        },
+        getHeader: function() {
+          let content = '<div id="header">' + this.header + "</div>";
+          return content;
+        },
+        getFooter: function() {
+          let content = '<div id="footer">' + this.footer + "</div>";
+          return content;
+        },
+        getBody: function() {
+          let content =
+            '<div id="body">' +
+            this.body +
+            "<br><br>" +
+            this.getData() +
+            "</div>";
+          return content;
+        },
+        getData: function() {
+          let content =
+            '<div id="data">' +
+            this.data +
+            this.app.printApp() +
+            "</div>";
+          return content;
+        },
+        printDocument: function() {
+          document.write(this.getHeader());
+          document.write(this.getBody());
+          document.write(this.getFooter());
+        }
+      };
+
+      doc.writeToHeader("This is Document's header");
+      doc.writeToBody("This is Document's body");
+      doc.writeData("This is Document's data");
+      doc.writeToFooter("This is Document's footer");
+
+      doc.app.writeToAppHeader("This is Apps's header", "red");
+      doc.app.writeToAppBody("This is Apps's body", "lightcyan");
+      doc.app.writeAppData("This is Apps's data", "yellow");
+      doc.app.writeToAppFooter("This is Apps's footer", "pink");
+
+      doc.printDocument();
+    </script>
+  </body>
+</html>

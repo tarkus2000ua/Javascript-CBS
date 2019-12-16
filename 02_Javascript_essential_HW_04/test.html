@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var poly = 1596;
+var ylop = 0;
+var isPalindrome = false;
+
+
+/* Техническое задание
+
+Мяу! Напиши программу, которая проверяет, является ли число палиндромом.
+
+Число записано в переменную poly.
+
+Переменная, куда нужно записать «перевёрнутую» версию числа, называется ylop.
+
+Выясни, является ли число из переменной poly палиндромом. Если да, значение флага isPalindrome должно быть true, если число не палиндром, то false.
+
+*/
+
+ylop = poly.toString();
+
+ylop = ylop.split().reverse();//.join();
+
+ylop = parseInt(ylop);
+
+if (poly === ylop) {
+  isPalindrome = true;
+}
+    </script>
+</body>
+</html>
