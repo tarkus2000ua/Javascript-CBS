@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Написать функцию с 3 аргументами: количество людей в поездке,
+        // количество дней (по умолчанию - 7 дней), страна путешествия (Египет, Турция, Болгария);
+        // В зависимости от страны - своя сумма.
+        // У каждой страны - стоимость 1 дня
+        // Пользователь при покупке свыше 10 дней - получает скидку в 10%
+        // меньше 5 дней -путевку взять нельзя - выдает ошибку.
+        // Путевку на 0 человек взять нельзя. Результат должен выводиться в тело документа.
+        do { var people = +prompt("Введите количество людей в поездке "); 
+        }
+        while (people < 1);
+
+        do {
+            var days = +prompt("Введите количество дней (не менее 5)", 7);
+            if (days<5) alert("Извините, менее 5 дней выбрать нельзя");
+        } 
+        while (days < 5);
+
+        do {
+            var country = +prompt("Выберите страну: (1 - Египет, 2 - Турция, 3 - Болгария");
+        }
+        while (![1,2,3].includes(country));
+
+        let countryNames = ["Египет","Турцию","Болгарию"];
+        let countryPrices = [50,70,80];
+
+        let discount = (people>10)?0.1:0;
+        let totalPrice = people*countryPrices[country-1]*days*(1-discount);
+
+        document.write(`Стоимость поездки в ${countryNames[country-1]} для ${people} человек на ${days} дней составит ${totalPrice} у.е.`);
+
+    </script>
+</body>
+
+</html>

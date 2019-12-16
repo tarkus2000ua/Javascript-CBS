@@ -1,0 +1,66 @@
+.container {
+    width:1000px;
+    height:500px;
+    background-color: black;
+    border:2px solid red;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#ball1 {
+    width:80px;
+    height:80px;
+    background-color:aqua;
+    border-radius:50%;
+    position:absolute;
+    z-index: 4;
+    left:0px;
+    top:0px;
+}
+
+#ball2 {
+    width:250px;
+    height:250px;
+    border: 20px solid green;
+    box-sizing: border-box;
+    border-radius:50%;
+    position:absolute;
+    z-index: 1;
+    left:750px;
+    top:250px;
+}
+
+#ball3 {
+    width:80px;
+    height:80px;
+    background-color:purple;
+    position:absolute;
+    z-index: 2;
+    left:250px;
+    top:0;
+}
+
+#ball4 {
+    width:150px;
+    height:150px;
+    background-color:yellow;
+    border-radius:50%;
+    position:absolute;
+    z-index: 3;
+    left:350px;
+    top:0px;
+}
+
+.ball {
+    width:50px;
+    height:30px;
+    background-color:blue;
+    border-radius:50%;
+    position:absolute;
+    z-index: 5;
+    left:50px;
+    top:100px;
+}
+

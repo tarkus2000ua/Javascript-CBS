@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Exercise1</title>
+
+    <script>
+
+        //1.Напишите программу, которая выводит через document.write
+        //все числа от 1 до 100, с двумя исключениями.Для чисел,
+        //    нацело делящихся на 3, она должна выводить ‘Fizz’, а
+        //для чисел, делящихся на 5 (но не на 3) – ‘Buzz’.
+        //Когда сумеете – исправьте её так, чтобы она выводила
+        //«FizzBuzz» для всех чисел, которые делятся и на 3, и на 5.
+
+        let minNumber=1;
+        let maxNumber=100;
+        result="";
+        for (let index = minNumber; index <= maxNumber; index++) {
+            if (index%3 == 0) result+= "Fizz";
+            if (index%5 == 0) result+= "Buzz";
+            document.write(index+" "+result+"<br>");
+            result="";
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Get Random Color Function</title>
+	<script type="text/javascript">
+
+		/*
+
+		Метод Math.random() возвращает псевдослучайное число с плавающей запятой из диапазона [0, 1), то есть, от 0 (включительно) до 1 (но не включая 1)
+
+		Метод Math.floor() возвращает наибольшее целое число, которое меньше или равно данному числу.
+		
+		*/
+
+        document.write("<p><b>Метод Math.random() возвращает (генерирует) псевдослучайное число с плавающей запятой из диапазона [0, 1)</b></p>" + Math.random() + "<br/><hr/>");
+
+        document.write("<p><b>Math.floor(Math.random)</b>: возвращает наибольшее целое число, которое меньше или равно данному числу. (между 0 и 1 => всегда 0)</b></p>" + Math.floor(Math.random()) + "<br/><hr/>");
+
+        document.write("<p><b>Math.floor(Math.random) * 2 </b>: возвращает либо 0 либо 1 (2 не включительно)</b></p>" + Math.floor(Math.random() * 2) + "<br/><hr/>");
+
+        document.write("<p><b>Math.floor(Math.random) * 17 </b>: одно из этих целых чисел: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 (17 не включительно)</b></p>" + Math.floor(Math.random() * 17) + "<br/><hr/>");
+
+        document.write("<p><b>Math.floor(Math.random) * (10 + 1) </b>: чтобы вернуть целое число между 1 и 10</b></p>" + Math.floor(Math.random() * 10 + 1) + "<br/><hr/>");
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

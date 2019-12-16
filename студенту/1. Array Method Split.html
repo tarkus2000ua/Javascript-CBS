@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Array Method Split</title>
+    <script>
+
+        // USING ARRAYS TO MANIPULATE JAVASCRIPT STRINGS
+        //====================================================================
+
+        // String.split(разделитель, лимит);
+
+        // * Возвращает массив со строковыми элементами
+        // * Разделитель: символ из символов: по которму будет разделяться строка
+        // * В качестве разделителя может быть и регулярное выражение
+        // * Лимит: обозначает максимально возможную длинну массива 
+
+        //=====================================================================
+
+        // http://www.mypersonalwebsite.com?user=daryna&id=1498
+
+        // 1) http://www.mypersonalwebsite.com
+        // 2) ? (разделитель)
+        // 3) user=daryna&id=1498
+
+        // 4) user=daryna
+        // 5) & (разделитель)
+        // 6) id=1498
+
+        var url = "http://www.mypersonalwebsite.com?user=daryna&id=1498";
+        document.write(url + "<br><hr>");
+
+        var parts = url.split("?")[1].split("&");
+
+        document.write(parts[0] + "<br>");
+        document.write(parts[1] + "<br><hr>");
+    
+        //======================================================================
+
+        var a = 'Daryna';
+        document.write(a + "<br/>");
+        document.write(a.split("") + "<br/><hr/>");
+
+        var b = "This is my JavaScript practice day";
+        document.write(b + "<br/>");
+        document.write(b.split(" ") + "<br/><hr/>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
