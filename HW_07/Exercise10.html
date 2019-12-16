@@ -1,35 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 500px;
+      }
 
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,td {
+          width: 25%;
+      }
+    </style>
+  </head>
+  <body>
     <p id="demo"></p>
     <script>
-        // Есть массив объектов:
-        // var arr = [
-        //     {name: 'BMW', price: 2300, model: 'X5', color: 'red'},
-        //     {name: 'Infinity', price: 4500, model: 'FX-35', color: 'white'},
-        //     {name: 'Honda', price: 3900, model: 'Accord', color: 'blue'},
-        //     {name: 'Ford', price: 1500, model: 'Focus', color: 'green'},
-        //     {name: 'BMW', price: 2300, model: 'X5', color: 'orange'},
-        //     {name: 'Ford', price: 5000, model: 'Fusion', color: 'white'},
-        //     {name: 'BMW', price: 1900, model: 'X3', color: 'blue'},
-        //     {name: 'Ford', price: 2300, model: 'Fiesta', color: 'black'},
-        //     {name: 'Infinity', price: 5300, model: 'FX-45', color: 'black'},
-        //     {name: 'Honda', price: 2500, model: 'Civic', color: 'red'},
-        // ]
-        // - вывести все машины в тело документа
-        // - вывести только Ford
-        // - вывести только те, у которых стоимость более 4000
-        // - вывести только те, у которых стоимость более 4000 и отсортировать в порядке возрастания цены
-        // - вывести только белые и синие машины
+      // Есть массив объектов:
+      var arr = [
+        { name: "BMW", price: 2300, model: "X5", color: "red" },
+        { name: "Infinity", price: 4500, model: "FX-35", color: "white" },
+        { name: "Honda", price: 3900, model: "Accord", color: "blue" },
+        { name: "Ford", price: 1500, model: "Focus", color: "green" },
+        { name: "BMW", price: 2300, model: "X5", color: "orange" },
+        { name: "Ford", price: 5000, model: "Fusion", color: "white" },
+        { name: "BMW", price: 1900, model: "X3", color: "blue" },
+        { name: "Ford", price: 2300, model: "Fiesta", color: "black" },
+        { name: "Infinity", price: 5300, model: "FX-45", color: "black" },
+        { name: "Honda", price: 2500, model: "Civic", color: "red" }
+      ];
+      // - вывести все машины в тело документа
+      // - вывести только Ford
+      // - вывести только те, у которых стоимость более 4000
+      // - вывести только те, у которых стоимость более 4000 и отсортировать в порядке возрастания цены
+      // - вывести только белые и синие машины
 
-        
+      let ford = arr.filter(x => x["name"] == "Ford");
+      let priceAboveLimit = arr.filter(x => x["price"] > 4000);
+      let blueAndWhite = arr.filter(
+        x => x["color"] == "blue" || x["color"] == "white"
+      );
+      let blueAndWhiteSorted = blueAndWhite.sort((x,y) => (x["price"]-y["price"]));
+
+      function header() {
+        document.write(`<thead>`);
+        for (const key in arr[0]) {
+          if (arr[0].hasOwnProperty(key)) {
+            document.write(`<th>${key}</th>`);
+          }
+        }
+        document.write(`</thead>`);
+      }
+
+      function getAll(data) {
+        for (const car of data) {
+          document.write(`<tr>`);
+          for (const key in car) {
+            if (car.hasOwnProperty(key)) {
+              document.write(`<td>${car[key]}</td>`);
+            }
+          }
+        }
+        document.write(`</tr>`);
+      }
+
+      function print(f, caption) {
+        document.write(`<table>`);
+        document.write(`<caption>${caption}</caption>`);
+        header();
+        f();
+        document.write(`</table><br>`);
+      }
+
+      print(function() {
+        getAll(arr);
+      }, "Все автомобили");
+      print(function() {
+        getAll(ford);
+      }, "Ford");
+      print(function() {
+        getAll(priceAboveLimit);
+      }, "Дороже 4000");
+      print(function() {
+        getAll(blueAndWhite);
+      }, "Синие и белые");
+      print(function() {
+        getAll(blueAndWhiteSorted);
+      }, "Синие и белые по возрастанию цены");
     </script>
-</body>
+  </body>
 </html>
